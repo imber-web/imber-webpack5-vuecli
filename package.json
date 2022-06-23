@@ -17,6 +17,7 @@
     "@vue/babel-preset-jsx": "^1.2.4",
     "babel-loader": "^8.2.5",
     "cache-loader": "^4.1.0",
+    "css-minimizer-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "progress-bar-webpack-plugin": "^2.1.0",

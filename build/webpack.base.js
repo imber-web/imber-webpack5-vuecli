@@ -1,5 +1,6 @@
 // 公共配置
-
+// 开发环境：去除代码压缩、gzip、体积分析等优化的配置，大大提高构建速度
+// 生产环境：需要代码压缩、gzip、体积分析等优化的配置，大大降低最终项目打包体积
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
