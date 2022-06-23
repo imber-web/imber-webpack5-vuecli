@@ -1,10 +1,11 @@
 // 生产环境
-
+// webpack5默认开启tree-shaking，当打包的mode为production时，自动开启tree-shaking进行优化
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base')
 const webpack = require('webpack')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 module.exports = merge(base, {
   mode: 'production',
   // 使用nosources-source-map，只能定位源码位置，不能源码展示，体积较小，适合生产模式
@@ -19,7 +20,8 @@ module.exports = merge(base, {
           // VUE_APP_URL: JSON.stringify('https://xxx.com')
         }
       }
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   optimization: {
     minimizer: [
