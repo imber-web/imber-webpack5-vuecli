@@ -21,6 +21,11 @@ module.exports = merge(base, {
           // VUE_APP_URL: JSON.stringify('https://xxx.com')
         }
       }
-    })
-  ]
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    hot: true,
+    open: true
+  }
 })
