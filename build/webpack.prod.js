@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge')
 const base = require('./webpack.base')
 const webpack = require('webpack')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-
+const TerserPlugin = require('terser-webpack-plugin')
 module.exports = merge(base, {
   mode: 'production',
   // 使用nosources-source-map，只能定位源码位置，不能源码展示，体积较小，适合生产模式
@@ -23,7 +23,15 @@ module.exports = merge(base, {
   ],
   optimization: {
     minimizer: [
-      new CssMinimizerPlugin() // 去重压缩css
+      new CssMinimizerPlugin(), // 去重压缩css
+      new TerserPlugin({
+        // 压缩JS代码
+        terserOptions: {
+          compress: {
+            drop_console: true // 去除console
+          }
+        }
+      }) // 压缩JavaScript
     ]
   }
 })

@@ -24,6 +24,7 @@
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
     "sass-resources-loader": "^2.2.5",
+    "terser-webpack-plugin": "^5.3.3",
     "thread-loader": "^3.0.4",
     "vue": "^2.6.14",
     "vue-loader": "^15.9.8",
