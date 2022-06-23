@@ -21,7 +21,13 @@ module.exports = merge(base, {
         }
       }
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+    // gzip
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ],
   optimization: {
     minimizer: [
