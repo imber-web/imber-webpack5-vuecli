@@ -78,6 +78,9 @@ module.exports = {
       {
         test: /\.js$/,
         // 排除node_modules中的js
+        //使用include来指定编译文件夹
+        include: path.resolve(__dirname, '../src'),
+        //使用exclude排除指定文件夹
         exclude: /node_modules/,
         use: ['cache-loader', 'thread-loader', 'babel-loader']
       },
