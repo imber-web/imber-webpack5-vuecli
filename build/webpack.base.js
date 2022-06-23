@@ -4,6 +4,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const chalk = require('chalk')
 module.exports = {
   // 入口文件 main.js
   entry: {
@@ -33,7 +35,10 @@ module.exports = {
       filename: 'styles/chunk-[contenthash].css',
       ignoreOrder: true
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new ProgressBarPlugin({
+      format: ` build [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`
+    })
   ],
   module: {
     rules: [
