@@ -6,6 +6,7 @@ const webpack = require('webpack')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const CompressionPlugin = require('compression-webpack-plugin')
 module.exports = merge(base, {
   mode: 'production',
   // 使用nosources-source-map，只能定位源码位置，不能源码展示，体积较小，适合生产模式
